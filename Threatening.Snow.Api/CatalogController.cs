@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Threatening.Snow.Domain.Catalog;
 using Threatening.Snow.Data;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Threatening.Snow.Api.Controllers
 {
@@ -24,37 +27,48 @@ namespace Threatening.Snow.Api.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
         {
-            var item = new Item("Shirt", "Ohio State shirt.", "Nike", 29.99m);
-            item.Id = id;
-
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
             return Ok(item);
         }
 
         [HttpPost]
         public IActionResult Post(Item item)
         {
-            return Created("/catalog/42", item);
+            return Created($"/catalog/{item.Id}", item); // Optionally update the URI to match the item’s ID
         }
 
         [HttpPost("{id}/ratings")]
         public IActionResult PostRating(int id, [FromBody] Rating rating)
         {
-            var item = new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m);
-            item.Id = id;
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
             item.AddRating(rating);
+            _db.SaveChanges();
             return Ok(item);
         }
 
         [HttpPut("{id:int}")]
         public IActionResult Put(int id, Item item)
         {
+    
             return NoContent();
         }
 
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
-        {
-            return NoContent();
+        public IActionResult Delete(int id){
+            var item = _db.Items.Find(id);
+            if(item == null)
+            return NotFound();
+        }
+        return Ok(item);
         }
     }
-}
+
