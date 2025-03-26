@@ -33,6 +33,7 @@ namespace Threatening.Snow.Domain.Catalog
             Description = description;
             Brand = brand;
             Price = price;
+            this.Ratings = new List<Rating>();
         }
 
       public void AddRating(Rating rating){
