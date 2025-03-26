@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Threatening.Snow.Domain\Threatening.Snow.Domain.csproj" />
+    <ProjectReference Include="..\Threatening.Snow.Data\Threatening.Snow.Data.csproj" />
   </ItemGroup>
 
 </Project>
