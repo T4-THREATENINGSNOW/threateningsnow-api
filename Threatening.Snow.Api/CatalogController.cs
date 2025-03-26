@@ -36,8 +36,9 @@ namespace Threatening.Snow.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Item item)
-        {
+        public IActionResult Post(Item item){
+            _db.Items.Add(item);
+            _db.SaveChanges();
             return Created($"/catalog/{item.Id}", item); // Optionally update the URI to match the item’s ID
         }
 
