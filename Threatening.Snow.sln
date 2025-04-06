@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threatening.Snow.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threatening.Snow.Data", "Threatening.Snow.Data\Threatening.Snow.Data.csproj", "{442E5413-2CE5-4235-AC4E-5BD448C62AE1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{427C577F-8CFE-462B-B80B-B2D548123F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "threatening.snow.api.Domain.Tests", "tests\threatening.snow.api.Domain.Tests\threatening.snow.api.Domain.Tests.csproj", "{FB79A065-D9BA-45F5-9F09-FCCF899FF98F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{442E5413-2CE5-4235-AC4E-5BD448C62AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442E5413-2CE5-4235-AC4E-5BD448C62AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442E5413-2CE5-4235-AC4E-5BD448C62AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB79A065-D9BA-45F5-9F09-FCCF899FF98F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB79A065-D9BA-45F5-9F09-FCCF899FF98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB79A065-D9BA-45F5-9F09-FCCF899FF98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB79A065-D9BA-45F5-9F09-FCCF899FF98F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB79A065-D9BA-45F5-9F09-FCCF899FF98F} = {427C577F-8CFE-462B-B80B-B2D548123F87}
 	EndGlobalSection
 EndGlobal
