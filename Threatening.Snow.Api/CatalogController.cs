@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Threatening.Snow.Domain.Catalog;
 using Threatening.Snow.Data;
 using Microsoft.EntityFrameworkCore;
+using Threatening.Snow.Api.Security;
 
 namespace Threatening.Snow.Api.Controllers
 {
@@ -75,6 +76,7 @@ namespace Threatening.Snow.Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult Delete(int id)
         {
             var item = _db.Items.Find(id);
