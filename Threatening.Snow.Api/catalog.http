@@ -1,0 +1,5 @@
+### Get token from Auth0
+curl --request POST \
+  --url https://dev-11fgcg8jdtvfr7jo.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{"client_id":"IViJrNR8jGdxYjvdqKwCV65eagFjO2xl","client_secret":"fS5XIiDksoukZOHqTmCyGauzhve77Yvhm55C1Ijw464RTxn3HCHGLTaRMj1yWnon","audience":"https://threatening-snow","grant_type":"client_credentials"}'

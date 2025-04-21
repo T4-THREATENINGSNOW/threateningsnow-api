@@ -3,11 +3,13 @@ using Threatening.Snow.Domain.Catalog;
 using Threatening.Snow.Data;
 using Microsoft.EntityFrameworkCore;
 using Threatening.Snow.Api.Security;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Threatening.Snow.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("catalog")]
     public class CatalogController : ControllerBase
     {
         private readonly StoreContext _db;
